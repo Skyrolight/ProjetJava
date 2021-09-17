@@ -11,5 +11,7 @@ public class lancer {
 
 		ab.AddAbo("2002-04-01", "2002-04-02", 1, 1);
 		ab.SuppAbo(1);
+
+		//test
 	}
 }
