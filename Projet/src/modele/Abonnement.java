@@ -75,10 +75,6 @@ public class Abonnement {
         }
         this.id_revue = id_revue;
     }
-
-    public String toString(){
-        return "(" + (this.id_client>=0?this.id_client:"nouveau") + ")" + this.date_debut + " - " + this.date_fin + " - " +this.id_abonnement + " - " + this.id_client + " - " + this.id_revue;
-    }
     
     public void TOString() {
     	System.out.println(this.getId_abonnement()+" - "+this.getdate_debut()+" - "+this.getdate_fin()+" - "+this.getid_client()+" - "+this.getid_revue());}

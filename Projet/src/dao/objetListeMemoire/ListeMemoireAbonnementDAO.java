@@ -1,6 +1,5 @@
 package dao.objetListeMemoire;
 
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import dao.objet.AbonnementDAO;
@@ -82,13 +81,4 @@ public class ListeMemoireAbonnementDAO implements AbonnementDAO{
 	public List<Abonnement> getAll() {
 		return (ArrayList<Abonnement>) this.donnees;
 	}
-
-	@Override
-	public List<Abonnement> getByDateDeb(Date date) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-
 }

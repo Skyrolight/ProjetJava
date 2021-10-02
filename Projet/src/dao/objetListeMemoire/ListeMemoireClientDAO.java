@@ -84,12 +84,6 @@ public class ListeMemoireClientDAO implements ClientDAO{
 		return (ArrayList<Client>) this.donnees;
 	}
 
-	@Override
-	public List<Client> getByNomPenom(String nom, String prenom) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 
 
 }

@@ -186,45 +186,4 @@ public class MySQLClientDAO implements ClientDAO {
 		return null;
 	}
 
-
-	@Override
-	public List<Client> getByNomPenom(String nom, String prenom) {
-		Connection laConnexion = co.creeConnexion();
-		try {
-			List<Client> result = new ArrayList<>();
-			/*REQUETE SIMPLE*/
-			PreparedStatement requete = laConnexion.prepareStatement("select id_client, nom, prenom, no_rue, voie, code_postal, ville, pays from Client where nom = ? AND prenom = ?");	
-			requete.setString(1,nom);
-			requete.setString(2,prenom);
-			ResultSet res = requete.executeQuery(); // execute ONLY
-
-			/*AFFICHAGE*/		
-				while (res.next()) {
-					int id_client = res.getInt("id_client");
-				    String nom1 = res.getString("nom");
-				    String prenom1 = res.getString("prenom");
-				    int no_rue = res.getInt("no_rue");
-				    String voie = res.getString("voie");
-				    int code_postal = res.getInt("code_postal");
-				    String ville = res.getString("ville");
-				    String pays = res.getString("pays");					
-					
-					Client c = new Client(id_client, nom1, prenom1, no_rue, voie, code_postal, ville, pays);
-					result.add(c);}
-				
-				if (res != null)
-				       res.close();
-				if (requete != null) 
-						requete.close();
-				if (laConnexion != null) 
-						laConnexion.close();
-				return result;
-			} 
-		
-		catch (SQLException sqle){
-			System.out.println("Pb select " + sqle.getMessage());
-			}
-		return null;
-	}
-
 }

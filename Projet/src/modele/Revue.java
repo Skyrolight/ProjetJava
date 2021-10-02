@@ -78,4 +78,3 @@ public void TOString() {
 	System.out.println(this.getId_revue()+" - "+this.getTitre()+" - "+this.getDescription()+" - "+this.getTarif_numero()+" - "+this.getVisuel()+" - "+this.getId_periodicite());
 	}
 }
-

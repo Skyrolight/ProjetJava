@@ -85,10 +85,4 @@ public class ListeMemoireRevueDAO implements RevueDAO{
 		return (ArrayList<Revue>) this.donnees;
 	}
 
-	@Override
-	public List<Revue> getByTarif(int tarif) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

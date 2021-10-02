@@ -142,40 +142,4 @@ public class MySQLPeriodiciteDAO implements PeriodiciteDAO{
 		return null;
 	}
 
-
-	@Override
-	public List<Periodicite> getByLibelle(String lib) {
-		
-		Connection laConnexion = co.creeConnexion();
-		try {
-			List<Periodicite> L = new ArrayList<>();
-			/*REQUETE SIMPLE*/
-			PreparedStatement requete = laConnexion.prepareStatement("select id_periodicite, libelle from Periodicite where libelle = ?");	
-			requete.setString(1, lib);
-			ResultSet res = requete.executeQuery(); // execute ONLY
-
-			/*AFFICHAGE*/		
-				while (res.next()) {
-					int id = res.getInt("id_periodicite");
-					String libelle = res.getString("libelle");
-					Periodicite P = new Periodicite(id,libelle);
-					L.add(P);}
-				
-				if (res != null)
-				       res.close();
-				if (requete != null) 
-						requete.close();
-				if (laConnexion != null) 
-						laConnexion.close();
-				return L;
-			} 
-		
-		catch (SQLException sqle){
-			System.out.println("Pb select " + sqle.getMessage());
-			}
-		return null;
-		
-		
-	}
-
 }

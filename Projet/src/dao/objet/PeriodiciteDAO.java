@@ -1,11 +1,15 @@
 package dao.objet;
 
-import java.util.List;
+import java.awt.List;
 
 import dao.DAO;
 import modele.Periodicite;
 
 public interface PeriodiciteDAO extends DAO<Periodicite>{
 
-	public List<Periodicite> getByLibelle(String lib);
+	public default List getByLibelle(String lib){
+		return null;
+	}
+		
+	
 }

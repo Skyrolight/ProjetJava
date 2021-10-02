@@ -3,43 +3,42 @@ package test.objetMySQL;
 import static dao.Persistance.MYSQL;
 import static org.junit.Assert.assertEquals;
 
+import java.sql.Date;
+
 import org.junit.Test;
 
 import dao.factory.DAOFactory;
-import dao.objet.PeriodiciteDAO;
-import modele.Periodicite;
+import dao.objet.AbonnementDAO;
+import modele.Abonnement;
+
 
 public class MySQLAbonnementDAOTest {
-
+	
 	@Test
 	public void testCreateAbonnement() {
-
 		DAOFactory daof = DAOFactory.getDAOFactory(MYSQL);
-		PeriodiciteDAO dao = daof.getPeriodiciteDAO();
-
-		int nb1 = dao.getAll().size();
-
-		Periodicite o = new Periodicite(184, "Décenial");
-		dao.create(o);
-
-		int nb2 = dao.getAll().size();
+		int nb1 = daof.getAbonnementDAO().getAll().size();
+		System.out.print(nb1);
+		AbonnementDAO dao = daof.getAbonnementDAO();		
+		Abonnement ab = new Abonnement(8, Date.valueOf("2012-04-01"), Date.valueOf("2014-02-01"), 2, 2);
+		dao.create(ab);
+		int nb2 = daof.getAbonnementDAO().getAll().size();
+		System.out.print("\n" +nb2);
 		
 		assertEquals(nb1+1, nb2);
 	}
 	
 	@Test
-	public void testDeletePeriodicite() {
-
+	public void testRemoveAbonnement() {
 		DAOFactory daof = DAOFactory.getDAOFactory(MYSQL);
-		PeriodiciteDAO dao = daof.getPeriodiciteDAO();
-
-		int nb1 = dao.getAll().size();
-
-		Periodicite o = new Periodicite(22555, "Décenial");
-		dao.delete(o);
-
-		int nb2 = dao.getAll().size();
+		int nb1 = daof.getAbonnementDAO().getAll().size();
+		System.out.print(nb1);
+		AbonnementDAO dao = daof.getAbonnementDAO();		
+		Abonnement ab = new Abonnement(8, Date.valueOf("2012-04-01"), Date.valueOf("2014-02-01"), 2, 2);
+		dao.create(ab);
+		int nb2 = daof.getAbonnementDAO().getAll().size();
+		System.out.print("\n" +nb2);
 		
-		assertEquals(nb1,nb2+1);
+		assertEquals(nb1+1, nb2);
 	}
 }

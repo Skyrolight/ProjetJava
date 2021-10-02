@@ -169,43 +169,6 @@ public class MySQLRevueDAO implements RevueDAO{
 		return null;
 	}
 
-	@Override
-	public List<Revue> getByTarif(int tarif) {
-		Connection laConnexion = co.creeConnexion();
-		try {
-			List<Revue> L = new ArrayList<>();
-			/*REQUETE SIMPLE*/
-			PreparedStatement requete = laConnexion.prepareStatement("select id_revue, titre, description, tarif_numero, visuel, id_periodicite from Revue where tarif_numero = ?");	
-			requete.setInt(1, tarif);
-			ResultSet res = requete.executeQuery(); // execute ONLY
-
-			/*AFFICHAGE*/		
-				while (res.next()) {
-					int id_revue = res.getInt("id_revue");
-					String titre = res.getString("titre");
-					String description = res.getString("description");
-					int tarif_numero = res.getInt("tarif_numero");
-					String visuel = res.getString("visuel");
-					int id_periodicite = res.getInt("id_periodicite");
-					
-					Revue P = new Revue(id_revue, titre, description, tarif_numero, visuel, id_periodicite);
-					L.add(P);}
-				
-				if (res != null)
-				       res.close();
-				if (requete != null) 
-						requete.close();
-				if (laConnexion != null) 
-						laConnexion.close();
-				return L;
-			} 
-		
-		catch (SQLException sqle){
-			System.out.println("Pb select " + sqle.getMessage());
-			}
-		return null;
-	}
-
 	}
 
 
