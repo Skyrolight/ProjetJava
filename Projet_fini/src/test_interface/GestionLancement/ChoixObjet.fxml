@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test_interface.GestionLancement.CtrlObjet" >
+   <children>
+      <VBox prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <GridPane prefHeight="401.0" prefWidth="600.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="285.0" minHeight="10.0" prefHeight="167.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="286.0" minHeight="10.0" prefHeight="158.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="196.0" minHeight="10.0" prefHeight="74.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" onMouseClicked="#onAbonnementClick" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                     <image>
+                        <Image url="@images/logoAbonnement.png" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets left="30.0" />
+                     </GridPane.margin>
+                  </ImageView>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" onMouseClicked="#onClientClick" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.valignment="BOTTOM">
+                     <image>
+                        <Image url="@images/logoClient.jpg" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets left="30.0" />
+                     </GridPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="imgP" fitHeight="100.0" fitWidth="100.0" onMouseClicked="#onPeriodiciteClick" pickOnBounds="true" preserveRatio="true" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                     <image>
+                        <Image url="@images/logoPeriodicite.png" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets right="30.0" />
+                     </GridPane.margin>
+                  </ImageView>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" onMouseClicked="#onRevueClick" pickOnBounds="true" preserveRatio="true" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM">
+                     <image>
+                        <Image url="@images/logoRevue.jpg" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets right="30.0" />
+                     </GridPane.margin>
+                  </ImageView>
+                  <Button fx:id="btRetour" mnemonicParsing="false" onMouseClicked="#onRetourClick" prefHeight="25.0" prefWidth="100.0" text="Retour" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets right="30.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="btQuitter" mnemonicParsing="false" onMouseClicked="#onQuitterClick" prefHeight="25.0" prefWidth="100.0" text="Quitter" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="30.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Label onMouseClicked="#onRevueClick" text="Revue" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets right="60.0" top="45.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label onMouseClicked="#onClientClick" text="Client" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets left="65.0" top="45.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label onMouseClicked="#onPeriodiciteClick" text="Periodicité" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets right="45.0" top="35.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label onMouseClicked="#onAbonnementClick" text="Abonnement" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets left="40.0" top="35.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+   </children>
+</FlowPane>
